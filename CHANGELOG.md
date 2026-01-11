@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2026-01-11
+## [v1.0.1] - 2026-01-11
+### Fixed
+- **Build System**: Upgraded Gradle to 8.5 and AGP to 8.2.2 for modern JDK support (Issue #14).
+- **Compliance**: Fixed API 34 strict Manifest requirements (`android:exported`) and Lint/ChromeOS permission errors.
+- **Hygiene**: Removed local `.vscode` settings from git tracking (Issue #16).
+
+## [v1.0.0] - 2026-01-11
 
 ### Added
 - **CI/CD**: GitHub Actions pipeline for automated builds and APK generation (`.github/workflows/ci.yml`).
