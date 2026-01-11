@@ -1,7 +1,7 @@
 # SOS_STAYSAFE
 A simple SOS Safety App
 
-![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/app_logo.jpg?raw=true)
+![app_logo](images/app_logo.jpg)
 
 https://drive.google.com/file/d/1GOLNuZMmWjXNRklRZB64p5rdcWafzArx/view
 
@@ -22,11 +22,11 @@ At pressing the SOS button, a Help text along with the latitude and longitudes o
 
 App Permissions:- 1. Send SMS 2. Allow access to the mobile GPS service.
 
-![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app1.jpg?raw=true) ![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app2.jpg?raw=true)
+![safety_app1](images/safety_app1.jpg) ![safety_app2](images/safety_app2.jpg)
 
-![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app5.jpg?raw=true) ![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app6.jpg?raw=true)
+![safety_app5](images/safety_app5.jpg) ![safety_app6](images/safety_app6.jpg)
 
-![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app7.jpg?raw=true) ![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app8.jpg?raw=true)
+![safety_app7](images/safety_app7.jpg) ![safety_app8](images/safety_app8.jpg)
 
-![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app9.jpg?raw=true) ![alt text](https://github.com/Millennium-stack/SOS_STAYSAFE/blob/safety/images/safety_app10.jpg?raw=true)
+![safety_app9](images/safety_app9.jpg) ![safety_app10](images/safety_app10.jpg)
 
