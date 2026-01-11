@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
+    <uses-feature android:name="android.hardware.telephony" required="false" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/sos_icon"
