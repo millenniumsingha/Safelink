@@ -1,4 +1,4 @@
-# SOS_STAYSAFE
+# Safelink v2.0.0 (Beta)
 A simple SOS Safety App
 
 ![app_logo](images/app_logo.jpg)
