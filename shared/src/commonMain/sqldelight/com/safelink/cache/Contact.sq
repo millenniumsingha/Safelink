@@ -1,0 +1,27 @@
+CREATE TABLE ContactEntity (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    phoneNumber TEXT NOT NULL,
+    isEmergencyContact INTEGER AS kotlin.Boolean NOT NULL DEFAULT 0
+);
+
+getContacts:
+SELECT *
+FROM ContactEntity;
+
+getContactById:
+SELECT *
+FROM ContactEntity
+WHERE id = ?;
+
+insertContact:
+INSERT OR REPLACE
+INTO ContactEntity(id, name, phoneNumber, isEmergencyContact)
+VALUES(?, ?, ?, ?);
+
+deleteContactById:
+DELETE FROM ContactEntity
+WHERE id = ?;
+
+deleteAllContacts:
+DELETE FROM ContactEntity;
