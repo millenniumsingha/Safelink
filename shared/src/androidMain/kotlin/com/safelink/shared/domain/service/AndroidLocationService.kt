@@ -1,5 +1,7 @@
 package com.safelink.shared.domain.service
 
+import android.annotation.SuppressLint
+
 import android.content.Context
 import android.location.LocationManager
 import com.safelink.shared.domain.model.LocationData
@@ -7,6 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class AndroidLocationService(private val context: Context) : LocationService {
+    @SuppressLint("MissingPermission")
     override suspend fun getCurrentLocation(): LocationData? {
         // Simple implementation using LocationManager network provider for now
         // In a real app, use FusedLocationProviderClient
