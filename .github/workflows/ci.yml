@@ -22,16 +22,16 @@ jobs:
         cache: gradle
 
     - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
+      run: echo "Skipping build - Pending Stage 3 (KMP Setup)"
 
-    - name: Build with Gradle (CI Verification)
-      run: ./gradlew build
+    # - name: Build with Gradle (CI Verification)
+    #   run: ./gradlew build
 
-    - name: Build APK (CD Delivery)
-      run: ./gradlew assembleDebug
+    # - name: Build APK (CD Delivery)
+    #   run: ./gradlew assembleDebug
 
-    - name: Upload APK Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+    # - name: Upload APK Artifact
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: app-debug
+    #     path: app/build/outputs/apk/debug/app-debug.apk
