@@ -1,0 +1,11 @@
+com.safelink.shared-pngs-0 C:\Safelink\shared\build\generated\res\pngs\release
+com.safelink.shared-resValues-1 C:\Safelink\shared\build\generated\res\resValues\release
+com.safelink.shared-mergeReleaseResources-2 C:\Safelink\shared\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.safelink.shared-mergeReleaseResources-3 C:\Safelink\shared\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.safelink.shared-release-4 C:\Safelink\shared\build\intermediates\merged_res\release\mergeReleaseResources
+com.safelink.shared-androidMain-5 C:\Safelink\shared\src\androidMain\res
+com.safelink.shared-androidRelease-6 C:\Safelink\shared\src\androidRelease\res
+com.safelink.shared-main-7 C:\Safelink\shared\src\main\res
+com.safelink.shared-release-8 C:\Safelink\shared\src\release\res
+com.safelink.shared-sqlite-2.4.0-9 C:\Users\Alina\.gradle\caches\transforms-4\3076a892a4fc9d53d6be5b34148c4fa3\transformed\sqlite-2.4.0\res
+com.safelink.shared-sqlite-framework-2.4.0-10 C:\Users\Alina\.gradle\caches\transforms-4\53a871b46f61b90ef4a1c96bc81f2a7a\transformed\sqlite-framework-2.4.0\res
