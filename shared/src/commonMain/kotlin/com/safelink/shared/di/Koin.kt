@@ -12,6 +12,7 @@ import com.safelink.shared.domain.usecase.SendEmergencyAlertUseCase
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.module
+import org.koin.dsl.KoinAppDeclaration
 
 expect fun platformModule(): Module
 
@@ -30,12 +31,12 @@ val commonModule = module {
     factory { SendEmergencyAlertUseCase(get(), get(), get(), get()) }
 }
 
-fun initKoin(appModule: Module = module { }) {
-    startKoin {
-        modules(
-            appModule,
-            commonModule,
-            platformModule()
-        )
-    }
+
+
+fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
+    appDeclaration()
+    modules(
+        commonModule,
+        platformModule()
+    )
 }
