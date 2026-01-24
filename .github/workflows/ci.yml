@@ -2,9 +2,9 @@ name: Android CI/CD
 
 on:
   push:
-    branches: [ "master", "phase/*" ]
+    branches: [ "master", "phase/*", "phase-*" ]
   pull_request:
-    branches: [ "master", "phase/*" ]
+    branches: [ "master", "phase/*", "phase-*" ]
 
 jobs:
   build:
@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: composeApp/build/outputs/apk/debug/composeApp-debug.apk

@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS Settings (
+    key TEXT NOT NULL PRIMARY KEY,
+    value TEXT NOT NULL
+);
+
+getSettingByKey:
+SELECT value FROM Settings WHERE key = ?;
+
+insertOrReplaceSetting:
+INSERT OR REPLACE INTO Settings(key, value) VALUES (?, ?);
