@@ -1,5 +1,6 @@
 package com.safelink.app.ui.screens
 
+import com.safelink.app.util.rememberSosPermissionRequester
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,9 +14,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -34,6 +38,25 @@ fun HomeScreen(
 ) {
     val sendEmergencyAlert: SendEmergencyAlertUseCase = koinInject()
     val scope = rememberCoroutineScope()
+    val snackbarHostState = remember { SnackbarHostState() }
+
+    val requestPermissions = rememberSosPermissionRequester(
+        onGranted = {
+            scope.launch {
+                try {
+                    sendEmergencyAlert()
+                    snackbarHostState.showSnackbar("SOS Alert Sent!")
+                } catch (e: Exception) {
+                    snackbarHostState.showSnackbar("Failed to send alert: ${e.message}")
+                }
+            }
+        },
+        onDenied = {
+            scope.launch {
+                snackbarHostState.showSnackbar("Permissions denied. Cannot send SOS.")
+            }
+        }
+    )
 
     Scaffold(
         topBar = {
@@ -48,7 +71,8 @@ fun HomeScreen(
                     }
                 }
             )
-        }
+        },
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { padding ->
         Column(
             modifier = Modifier
@@ -61,14 +85,7 @@ fun HomeScreen(
             Spacer(modifier = Modifier.height(32.dp))
             SOSButton(
                 onClick = {
-                    scope.launch {
-                        try {
-                            sendEmergencyAlert()
-                            // TODO: Show success snackbar
-                        } catch (e: Exception) {
-                            // TODO: Show error
-                        }
-                    }
+                   requestPermissions()
                 }
             )
         }
