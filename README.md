@@ -1,32 +1,57 @@
-# Safelink v2.0.0 (Beta)
-A simple SOS Safety App
+# SafeLink (KMP Edition)
 
-![app_logo](images/app_logo.jpg)
+SafeLink is a cross-platform personal safety application built with **Kotlin Multiplatform (KMP)** and **Compose Multiplatform**. It allows users to manage emergency contacts and send SOS alerts with their location.
 
-https://drive.google.com/file/d/1GOLNuZMmWjXNRklRZB64p5rdcWafzArx/view
+## 🏗 Architecture
 
-An android application for your safety. Your Personal Bodyguard!
+The project follows a **Clean Architecture** approach with a single Shared Module:
 
-Technologies Used: - Android Studio, Google Maps API key, Android SQLite Database Package.
+*   **`composeApp`**: The UI layer (Jetpack Compose).
+    *   `commonMain`: Shared UI code (Screens, Components, Navigation).
+    *   `androidMain`: Android entry point (`MainActivity`).
+    *   `desktopMain`: Desktop entry point (`Main.kt`).
+    *   `iosMain`: iOS bridge (`MainViewController`).
+*   **`shared`**: The core business logic and data.
+    *   `domain`: Models, Repository Interfaces, Use Cases.
+    *   `data`: Repository Implementations, SQLDelight Databases (`Contact.sq`).
+    *   `di`: Dependency Injection (Koin).
+*   **`iosApp`**: The native iOS project (SwiftUI) that consumes the shared framework.
 
-Programming Languages Used: - Java 
-Scripting Language:- XML
+## 🚀 Getting Started
 
-The app basically saves or adds up to 5 contacts to the remotely build android SQLite database.
+### Prerequisites
+*   **JDK 17+**
+*   **Android Studio** (for Android/Desktop development)
+*   **Xcode** (for iOS development, macOS only)
 
-One can fetch contacts through the fetch contacts button.
+### Android
+1.  Open the project in Android Studio.
+2.  Select the `composeApp` configuration.
+3.  Run on an emulator or device.
 
-Or delete a contact by providing a saved contact to the edit text box.
+### Desktop
+1.  Open the terminal.
+2.  Run: `./gradlew :composeApp:run`
 
-At pressing the SOS button, a Help text along with the latitude and longitudes of the cell is texted to our saved contacts in the app database.
+### iOS (macOS Only)
+1.  Navigate to `iosApp/`.
+2.  Open `iosApp.xcodeproj` in Xcode.
+3.  Ensure the scheme is set to `iosApp`.
+4.  Run on a Simulator or Device.
 
-App Permissions:- 1. Send SMS 2. Allow access to the mobile GPS service.
+## 🛠 Tech Stack
+*   **Language**: Kotlin 2.0+
+*   **UI**: Jetpack Compose / Compose Multiplatform
+*   **DI**: Koin
+*   **Database**: SQLDelight
+*   **Async**: Coroutines & Flows
+*   **Navigation**: Navigation Compose
 
-![safety_app1](images/safety_app1.jpg) ![safety_app2](images/safety_app2.jpg)
-
-![safety_app5](images/safety_app5.jpg) ![safety_app6](images/safety_app6.jpg)
-
-![safety_app7](images/safety_app7.jpg) ![safety_app8](images/safety_app8.jpg)
-
-![safety_app9](images/safety_app9.jpg) ![safety_app10](images/safety_app10.jpg)
-
+## 📂 Project Structure
+```text
+├── composeApp/         # Shared UI & Platform Entry Points
+├── shared/             # Domain, Data, & Logic
+├── iosApp/             # Native iOS Shell
+├── gradle/             # Build Configuration
+└── legacy/             # Archived Android-only code (Reference)
+```
