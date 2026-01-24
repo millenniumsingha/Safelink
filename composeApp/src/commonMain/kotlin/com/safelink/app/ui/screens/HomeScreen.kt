@@ -1,7 +1,6 @@
 package com.safelink.app.ui.screens
 
-import androidx.activity.compose.rememberLauncherForActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
+import com.safelink.app.util.rememberSosPermissionRequester
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -41,14 +40,8 @@ fun HomeScreen(
     val scope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val permissionLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
-    ) { permissions ->
-        val smsGranted = permissions["android.permission.SEND_SMS"] == true
-        val locationGranted = permissions["android.permission.ACCESS_FINE_LOCATION"] == true ||
-                              permissions["android.permission.ACCESS_COARSE_LOCATION"] == true
-
-        if (smsGranted && locationGranted) {
+    val requestPermissions = rememberSosPermissionRequester(
+        onGranted = {
             scope.launch {
                 try {
                     sendEmergencyAlert()
@@ -57,12 +50,13 @@ fun HomeScreen(
                     snackbarHostState.showSnackbar("Failed to send alert: ${e.message}")
                 }
             }
-        } else {
+        },
+        onDenied = {
             scope.launch {
                 snackbarHostState.showSnackbar("Permissions denied. Cannot send SOS.")
             }
         }
-    }
+    )
 
     Scaffold(
         topBar = {
@@ -91,13 +85,7 @@ fun HomeScreen(
             Spacer(modifier = Modifier.height(32.dp))
             SOSButton(
                 onClick = {
-                   permissionLauncher.launch(
-                       arrayOf(
-                           "android.permission.SEND_SMS",
-                           "android.permission.ACCESS_FINE_LOCATION",
-                           "android.permission.ACCESS_COARSE_LOCATION"
-                       )
-                   )
+                   requestPermissions()
                 }
             )
         }
