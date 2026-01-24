@@ -22,7 +22,7 @@ val commonModule = module {
 
     // Repositories
     single<ContactRepository> { ContactRepositoryImpl(get()) }
-    single<SettingsRepository> { SettingsRepositoryImpl() }
+    single<SettingsRepository> { SettingsRepositoryImpl(get()) }
 
     // Use Cases
     factory { GetContactsUseCase(get()) }

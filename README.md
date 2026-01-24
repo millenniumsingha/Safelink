@@ -52,6 +52,5 @@ The project follows a **Clean Architecture** approach with a single Shared Modul
 ├── composeApp/         # Shared UI & Platform Entry Points
 ├── shared/             # Domain, Data, & Logic
 ├── iosApp/             # Native iOS Shell
-├── gradle/             # Build Configuration
-└── legacy/             # Archived Android-only code (Reference)
+└── gradle/             # Build Configuration
 ```
