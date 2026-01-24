@@ -14,7 +14,7 @@ class AndroidMessagingService(private val context: Context) : MessagingService {
             smsManager.sendTextMessage(contact.phoneNumber, null, message, null, null)
         } catch (e: Exception) {
             e.printStackTrace()
-            // In a real app, handle permission errors or fallback
+            throw e // Re-throw to let UI handle the error
         }
     }
 }
