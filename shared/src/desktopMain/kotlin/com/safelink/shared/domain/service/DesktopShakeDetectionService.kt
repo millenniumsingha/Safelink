@@ -5,11 +5,11 @@ import kotlinx.coroutines.flow.emptyFlow
 
 class DesktopShakeDetectionService : ShakeDetectionService {
     override fun startListening() {
-        println("Desktop Shake - start listening (Stub)")
+        // Desktop stub: Shake detection not supported
     }
 
     override fun stopListening() {
-        println("Desktop Shake - stop listening (Stub)")
+        // Desktop stub: Shake detection not supported
     }
 
     override fun observeShakeEvents(): Flow<Unit> {

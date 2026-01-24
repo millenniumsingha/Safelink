@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.0] - 2026-01-24
+### Added
+- **Architecture**: Complete migration to Kotlin Multiplatform (KMP).
+- **Platforms**: Support for Android, Desktop (JVM), and iOS (structure ready).
+- **UI**: Jetpack Compose Multiplatform UI with shared components.
+- **Data**: SQLDelight database for persisting contacts and settings.
+- **DI**: Koin dependency injection across all platforms.
+- **Features**: Runtime permission handling for SOS functionality.
+
+### Changed
+- **Project Structure**: Reorganized into `composeApp/`, `shared/`, and `iosApp/` modules.
+- **CI**: Updated artifact upload path for new structure.
+
+### Removed
+- **Legacy**: Archived old Android-only code to `legacy/` (now deleted).
+
 ## [v1.0.2] - 2026-01-15
 ### Changed
 - **Governance**: Migrated all operational logic from `standard_workflow.md` to `.cursorrules` for active enforcement.
