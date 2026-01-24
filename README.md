@@ -39,6 +39,20 @@ The project follows a **Clean Architecture** approach with a single Shared Modul
 3.  Ensure the scheme is set to `iosApp`.
 4.  Run on a Simulator or Device.
 
+## 🔒 Permissions
+
+To ensure the SOS functionality works as intended, the application requires the following permissions:
+
+### 🤖 Android
+*   **Location** (`ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION`): Used to attach accurate coordinates to emergency alerts.
+*   **SMS** (`SEND_SMS`): Used to send the SOS message directly to your emergency contacts.
+
+### 🍎 iOS
+*   **Location** (`NSLocationWhenInUseUsageDescription`): Required to access your current location for alerts.
+
+### 🖥️ Desktop
+*   **Location**: MacOS and Windows may prompt to allow location access for the application to function correctly.
+
 ## 🛠 Tech Stack
 *   **Language**: Kotlin 2.0+
 *   **UI**: Jetpack Compose / Compose Multiplatform
