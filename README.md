@@ -33,10 +33,18 @@ The project follows a **Clean Architecture** approach with a single Shared Modul
 1.  Open the terminal.
 2.  Run: `./gradlew :composeApp:run`
 
-### iOS (macOS Only)
+### iOS (macOS Only) — 🚧 Structure Ready
+
+> **Note:** The KMP shared framework compiles for iOS targets, but the native SwiftUI app is not yet implemented. iOS development requires macOS + Xcode, which is not available in this environment.
+>
+> **What's complete:** Shared Kotlin code, `expect/actual` platform abstractions, framework export configuration.
+>
+> **What's needed:** Swift/SwiftUI app to consume the `Shared.framework`.
+
+Once a Mac is available:
 1.  Navigate to `iosApp/`.
 2.  Open `iosApp.xcodeproj` in Xcode.
-3.  Ensure the scheme is set to `iosApp`.
+3.  Implement the SwiftUI app consuming `Shared.framework`.
 4.  Run on a Simulator or Device.
 
 ## 🔒 Permissions
