@@ -17,11 +17,11 @@ allprojects {
     configurations.all {
         resolutionStrategy {
             // Fixes CVE-2023-44487 (HTTP/2 Rapid Reset) and others
-            force("io.netty:netty-codec-http2:4.1.108.Final")
-            force("io.netty:netty-handler:4.1.108.Final")
-            force("io.netty:netty-codec-http:4.1.108.Final")
-            force("io.netty:netty-codec:4.1.108.Final")
-            force("io.netty:netty-common:4.1.108.Final")
+            force("io.netty:netty-codec-http2:4.1.124.Final")
+            force("io.netty:netty-handler:4.1.124.Final")
+            force("io.netty:netty-codec-http:4.1.124.Final")
+            force("io.netty:netty-codec:4.1.124.Final")
+            force("io.netty:netty-common:4.1.124.Final")
             // Fixes CVE-2024-25710 (Loop with corrupted DUMP) & CVE-2024-26308 (OOM)
             force("org.apache.commons:commons-compress:1.26.0")
             // Fixes CVE-2024-24549 (DoS)
