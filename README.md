@@ -76,3 +76,11 @@ To ensure the SOS functionality works as intended, the application requires the 
 ├── iosApp/             # Native iOS Shell
 └── gradle/             # Build Configuration
 ```
+
+## 🗺️ Roadmap
+
+| Milestone | Description | Status |
+|-----------|-------------|--------|
+| **v2.0** | KMP Migration — Android, Desktop, iOS framework | ✅ Complete |
+| **v2.1** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
+| **v3.0** | Cloud Sync & Auth — Cross-device backup | 📋 Planned |
