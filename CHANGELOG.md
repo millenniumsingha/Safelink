@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.1] - 2026-01-27
+### Security
+- **Dependabot**: Resolved 22 transitive dependency alerts involving Netty, BouncyCastle, and others via Gradle `resolutionStrategy` constraints (Issue #76).
+- **Hardening**: Configured `dependabot.yml` to prevent incompatible KMP version updates while keeping security alerts enabled (Issue #83).
+- **CodeQL**: Added advanced CodeQL analysis workflow (`codeql.yml`) for deeper security scanning (Issue #74).
+- **Actions**: Added explicit workflow permissions and dependency submission for better security graph visibility (Issue #66).
+
+### Documentation
+- **README**: Added detailed permission usage for Android/iOS (Issue #60).
+- **README**: Added project roadmap and clarified iOS platform status (Issue #62, #64).
+
+
+
 ## [v2.0.0] - 2026-01-24
 ### Added
 - **Architecture**: Complete migration to Kotlin Multiplatform (KMP).
