@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Build**: Windows Desktop Packaging (MSI) via `nativeDistributions` configuration.
 - **Build**: ProGuard updated to 7.5.0 to support JDK 21.
 
+### Fixed
+- **CI**: Made release signing conditional to prevent CI failures when keystore is not present (Issue #91).
+
 ## [v2.0.1] - 2026-01-27
 ### Security
 - **Dependabot**: Resolved 22 transitive dependency alerts involving Netty, BouncyCastle, and others via Gradle `resolutionStrategy` constraints (Issue #76).
