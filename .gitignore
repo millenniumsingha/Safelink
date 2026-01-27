@@ -16,3 +16,6 @@ captures/
 
 .cursorrules
 .kotlin/
+
+# Keystore
+*.jks
