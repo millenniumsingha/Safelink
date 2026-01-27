@@ -42,3 +42,26 @@ allprojects {
         }
     }
 }
+
+// Explicit dependency constraints for Dependabot visibility
+subprojects {
+    afterEvaluate {
+        dependencies {
+            constraints {
+                add("implementation", "io.netty:netty-codec-http2:4.1.108.Final")
+                add("implementation", "io.netty:netty-handler:4.1.108.Final")
+                add("implementation", "io.netty:netty-codec-http:4.1.108.Final")
+                add("implementation", "io.netty:netty-codec:4.1.108.Final")
+                add("implementation", "io.netty:netty-common:4.1.108.Final")
+                add("implementation", "org.bouncycastle:bcprov-jdk18on:1.78")
+                add("implementation", "org.bouncycastle:bcpkix-jdk18on:1.78")
+                add("implementation", "org.apache.commons:commons-compress:1.26.0")
+                add("implementation", "com.google.protobuf:protobuf-java:3.25.3")
+                add("implementation", "org.bitbucket.b_c:jose4j:0.9.6")
+                add("implementation", "commons-io:commons-io:2.14.0")
+                add("implementation", "org.jdom:jdom2:2.0.6.1")
+            }
+        }
+    }
+}
+
