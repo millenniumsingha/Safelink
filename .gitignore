@@ -14,5 +14,5 @@ captures/
 .externalNativeBuild
 .cxx/
 
-
 .cursorrules
+.kotlin/
