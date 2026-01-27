@@ -1,14 +1,16 @@
+# Dependabot configuration for KMP project
+# IMPORTANT: KMP dependencies require coordinated updates - individual version
+# bumps break multiplatform builds. Security updates are handled via Gradle
+# resolutionStrategy.force() in build.gradle.kts.
+#
+# This config disables automatic version PRs to prevent failing CI.
+# Security alerts are still reported in the Security tab.
+
 version: 2
 updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    groups:
-      kotlin:
-        patterns: ["org.jetbrains.kotlin*", "org.jetbrains.kotlinx*"]
-      compose:
-        patterns: ["org.jetbrains.compose*", "androidx.compose*"]
-      koin:
-        patterns: ["io.insert-koin*"]
+      interval: "monthly"  # Minimal frequency
+    open-pull-requests-limit: 0  # Disable version update PRs
+    # Security updates remain enabled (Dependabot Security Updates in repo settings)
