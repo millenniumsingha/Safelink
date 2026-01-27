@@ -72,12 +72,23 @@ android {
         localPropertiesFile.inputStream().use { keystoreProperties.load(it) }
     }
 
-    signingConfigs {
-        create("release") {
-            keyAlias = keystoreProperties.getProperty("keyAlias")
-            keyPassword = keystoreProperties.getProperty("keyPassword")
-            storeFile = if (keystoreProperties.getProperty("storeFile") != null) file(keystoreProperties.getProperty("storeFile")) else null
-            storePassword = keystoreProperties.getProperty("storePassword")
+    fun getProp(name: String): String? = keystoreProperties.getProperty(name) ?: System.getenv(name)
+
+    val keyAlias = getProp("keyAlias")
+    val keyPassword = getProp("keyPassword")
+    val storePassword = getProp("storePassword")
+    val storeFilePath = getProp("storeFile")
+
+    val hasSigningConfigs = keyAlias != null && keyPassword != null && storePassword != null && storeFilePath != null
+    
+    if (hasSigningConfigs) {
+        signingConfigs {
+            create("release") {
+                this.keyAlias = keyAlias
+                this.keyPassword = keyPassword
+                this.storePassword = storePassword
+                this.storeFile = file(storeFilePath!!)
+            }
         }
     }
 
@@ -91,7 +102,9 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            signingConfig = signingConfigs.getByName("release")
+            if (hasSigningConfigs) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
     compileOptions {
