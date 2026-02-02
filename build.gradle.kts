@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.sqldelight) apply false
+    id("org.jetbrains.kotlinx.kover") version "0.8.3" apply false
 }
 
 tasks.register("clean", Delete::class) {
