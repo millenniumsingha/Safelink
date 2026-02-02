@@ -72,6 +72,6 @@ To ensure the SOS functionality works as intended, the application requires the 
 | **v2.0** | KMP Migration — Android, Desktop, iOS framework | ✅ Complete |
 | **v2.1** | Release Signing + Windows Packaging | ✅ Complete |
 | **v2.1.1** | Release Assets (APK + MSI) | ✅ Complete |
-| **v2.1.2** | Tests + Coverage + CI Integration | ✅ Complete |
+| **v2.1.3** | Tests + Coverage + CI Integration | ✅ Complete |
 | **v2.2** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
 | **v3.0** | Cloud Sync & Auth — Cross-device backup | 📋 Planned |
