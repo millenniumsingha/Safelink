@@ -63,6 +63,14 @@ kotlin {
             implementation(libs.ktor.client.darwin)
             implementation(libs.sqldelight.native.driver)
         }
+
+        val androidInstrumentedTest by getting {
+            dependencies {
+                implementation(libs.junit)
+                implementation(libs.androidx.test.junit)
+                implementation(libs.androidx.espresso.core)
+            }
+        }
         
         desktopMain.dependencies {
             implementation(libs.sqldelight.sqlite.driver)
