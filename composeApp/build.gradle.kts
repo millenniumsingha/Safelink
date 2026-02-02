@@ -120,7 +120,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "SafeLink"
-            packageVersion = "2.1.0"
+            packageVersion = "2.2.0"
         }
         buildTypes.release.proguard {
             version.set("7.5.0")
