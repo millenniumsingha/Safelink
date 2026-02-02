@@ -1,5 +1,9 @@
 # SafeLink (KMP Edition)
 
+![Build Status](https://github.com/millenniumsingha/Safelink/actions/workflows/ci.yml/badge.svg)
+![CodeQL](https://github.com/millenniumsingha/Safelink/actions/workflows/codeql.yml/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey)
+
 SafeLink is a cross-platform personal safety application built with **Kotlin Multiplatform (KMP)** and **Compose Multiplatform**. It allows users to manage emergency contacts and send SOS alerts with their location.
 
 ## 📚 Documentation
@@ -66,5 +70,6 @@ To ensure the SOS functionality works as intended, the application requires the 
 | Milestone | Description | Status |
 |-----------|-------------|--------|
 | **v2.0** | KMP Migration — Android, Desktop, iOS framework | ✅ Complete |
-| **v2.1** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
+| **v2.1** | Release Signing + Windows Packaging | ✅ Complete |
+| **v2.2** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
 | **v3.0** | Cloud Sync & Auth — Cross-device backup | 📋 Planned |

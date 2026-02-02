@@ -96,8 +96,8 @@ android {
         applicationId = "com.safelink.app"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "2.1.0"
     }
     buildTypes {
         getByName("release") {
@@ -120,7 +120,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "SafeLink"
-            packageVersion = "1.0.0"
+            packageVersion = "2.1.0"
         }
         buildTypes.release.proguard {
             version.set("7.5.0")
