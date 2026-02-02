@@ -2,20 +2,11 @@
 
 SafeLink is a cross-platform personal safety application built with **Kotlin Multiplatform (KMP)** and **Compose Multiplatform**. It allows users to manage emergency contacts and send SOS alerts with their location.
 
-## 🏗 Architecture
+## 📚 Documentation
 
-The project follows a **Clean Architecture** approach with a single Shared Module:
-
-*   **`composeApp`**: The UI layer (Jetpack Compose).
-    *   `commonMain`: Shared UI code (Screens, Components, Navigation).
-    *   `androidMain`: Android entry point (`MainActivity`).
-    *   `desktopMain`: Desktop entry point (`Main.kt`).
-    *   `iosMain`: iOS bridge (`MainViewController`).
-*   **`shared`**: The core business logic and data.
-    *   `domain`: Models, Repository Interfaces, Use Cases.
-    *   `data`: Repository Implementations, SQLDelight Databases (`Contact.sq`).
-    *   `di`: Dependency Injection (Koin).
-*   **`iosApp`**: The native iOS project (SwiftUI) that consumes the shared framework.
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** — Technical design, module structure, and data flow.
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** — How to contribute to the project.
+- **[CHANGELOG.md](CHANGELOG.md)** — Full release history.
 
 ## 🚀 Getting Started
 
@@ -61,13 +52,6 @@ To ensure the SOS functionality works as intended, the application requires the 
 ### 🖥️ Desktop
 *   **Location**: MacOS and Windows may prompt to allow location access for the application to function correctly.
 
-## 🛠 Tech Stack
-*   **Language**: Kotlin 2.0+
-*   **UI**: Jetpack Compose / Compose Multiplatform
-*   **DI**: Koin
-*   **Database**: SQLDelight
-*   **Async**: Coroutines & Flows
-*   **Navigation**: Navigation Compose
 
 ## 📂 Project Structure
 ```text
