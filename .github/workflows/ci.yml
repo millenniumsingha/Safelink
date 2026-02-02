@@ -31,6 +31,15 @@ jobs:
     - name: Build with Gradle (CI Verification)
       run: ./gradlew build
 
+    - name: Run Unit Tests & Coverage
+      run: ./gradlew :shared:testDebugUnitTest koverHtmlReport
+
+    - name: Upload Coverage Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: shared/build/reports/kover/html/
+
     - name: Build APK (CD Delivery)
       run: ./gradlew assembleDebug
 
