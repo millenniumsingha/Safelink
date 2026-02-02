@@ -47,6 +47,12 @@ kotlin {
             implementation(libs.sqldelight.coroutines)
             implementation(libs.kotlinx.datetime)
         }
+
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
         
         androidMain.dependencies {
             implementation(libs.ktor.client.okhttp)
