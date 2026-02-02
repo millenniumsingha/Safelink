@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.2] - 2026-02-02
+### Added
+- **Testing**: Unit test infrastructure with `commonTest` and `ContactTest`.
+- **Testing**: Android integration tests (`androidInstrumentedTest`) with `ContactLocalDataSourceTest`.
+- **Testing**: Code coverage via Kover plugin (`koverHtmlReport`).
+- **CI**: Automated unit test and coverage report generation on every push.
+- **Governance**: GitHub Issue Templates (Bug Report, Feature Request).
+- **Governance**: Pull Request Template with checklist.
+
+### Changed
+- **README**: Added CI/Coverage badges and corrected roadmap.
+- **Versions**: Synced Android (`2.1.0`) and Desktop (`2.1.0`) package versions.
+
+## [v2.1.1] - 2026-02-02
+### Added
+- **Release**: Signed Android APK attached to GitHub Release.
+- **Release**: Windows MSI installer attached to GitHub Release.
+
 ## [v2.1.0] - 2026-01-27
 ### Added
 - **Build**: Android Release Signing configuration (protected by `local.properties`).
