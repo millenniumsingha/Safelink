@@ -17,5 +17,6 @@ captures/
 .cursorrules
 .kotlin/
 
-# Keystore
+# Keystore (never commit!)
 *.jks
+*.keystore
