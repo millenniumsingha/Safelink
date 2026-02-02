@@ -28,19 +28,7 @@ SafeLink is a cross-platform personal safety application built with **Kotlin Mul
 1.  Open the terminal.
 2.  Run: `./gradlew :composeApp:run`
 
-### Desktop on Windows ARM64 — ⚠️ Workaround Required
-
-Compose Multiplatform 1.7.0 does not publish Windows ARM64 native libraries.
-Use one of these workarounds:
-
-**Option 1: Use x64 JDK (Recommended)**
-1. Download [Microsoft OpenJDK x64](https://learn.microsoft.com/en-us/java/openjdk/download)
-2. Set `JAVA_HOME` to the x64 JDK path
-3. Run: `./gradlew :composeApp:run`
-
-**Option 2: Install the MSI**
-The MSI installer bundles x64 binaries which run via Windows' built-in x64 emulation.
-Download from [Releases](https://github.com/millenniumsingha/Safelink/releases).
+> **Note:** Native Windows ARM64 support enabled via Compose Multiplatform 1.8.2.
 
 ### iOS (macOS Only) — 🚧 Structure Ready
 
@@ -88,5 +76,6 @@ To ensure the SOS functionality works as intended, the application requires the 
 | **v2.1.1** | Release Assets (APK + MSI) | ✅ Complete |
 | **v2.1.3** | Tests + Coverage + CI Integration | ✅ Complete |
 | **v2.2.0** | Fix Desktop Launch + ARM64 Docs | ✅ Complete |
-| **v2.2** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
+| **v2.3.0** | Native Windows ARM64 (Compose 1.8.2) | ✅ Complete |
+| **v2.4** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
 | **v3.0** | Cloud Sync & Auth — Cross-device backup | 📋 Planned |

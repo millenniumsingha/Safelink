@@ -48,6 +48,7 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
+            implementation(libs.compose.material.icons)
             implementation(libs.compose.ui.tooling.preview)
             
             implementation(libs.koin.core)
@@ -58,6 +59,8 @@ kotlin {
         
         desktopMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
+            // Explicit ARM64 Skiko runtime for Windows ARM64 native support
+            implementation("org.jetbrains.skiko:skiko-awt-runtime-windows-arm64:0.9.20")
         }
     }
 }
@@ -115,12 +118,12 @@ android {
 
 compose.desktop {
     application {
-        mainClass = "MainKt"
+        mainClass = "com.safelink.app.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "SafeLink"
-            packageVersion = "2.2.0"
+            packageVersion = "2.3.0"
         }
         buildTypes.release.proguard {
             version.set("7.5.0")
