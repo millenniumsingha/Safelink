@@ -14,7 +14,7 @@ captures/
 .externalNativeBuild
 .cxx/
 
-.cursorrules
+# .cursorrules
 .kotlin/
 
 # Keystore (never commit!)

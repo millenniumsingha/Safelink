@@ -54,4 +54,5 @@ The project uses Kotlin's `expect/actual` pattern for platform-specific code:
 |---------|------------------|---------------------|
 | Database Driver | `DatabaseDriverFactory` | Android/iOS/Desktop implementations |
 | Location | `LocationService` | Platform-specific APIs |
-| Messaging | `MessagingService` | SMS (Android), etc. |
+| Messaging | `MessagingService` | SMS (Android), Email (Desktop), etc. |
+| DB Storage | `DatabaseDriverFactory` | Android (`Context`), Desktop (`%APPDATA%`), iOS (`NSFileManager`) |
