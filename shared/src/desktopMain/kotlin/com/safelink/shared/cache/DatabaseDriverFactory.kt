@@ -7,9 +7,19 @@ import java.io.File
 
 actual class DatabaseDriverFactory {
     actual fun createDriver(): SqlDriver {
-        val driver = JdbcSqliteDriver("jdbc:sqlite:safelink.db")
-        if (!File("safelink.db").exists()) {
-             SafeLinkDatabase.Schema.create(driver)
+        // Use user-writable AppData directory for database storage
+        // This avoids "Access is denied" errors when installed in Program Files
+        val appDataDir = System.getenv("APPDATA") ?: System.getProperty("user.home")
+        val safelinkDir = File(appDataDir, "SafeLink")
+        if (!safelinkDir.exists()) {
+            safelinkDir.mkdirs()
+        }
+        val dbFile = File(safelinkDir, "safelink.db")
+        val dbPath = dbFile.absolutePath.replace("\\", "/")
+        
+        val driver = JdbcSqliteDriver("jdbc:sqlite:$dbPath")
+        if (!dbFile.exists()) {
+            SafeLinkDatabase.Schema.create(driver)
         }
         return driver
     }
