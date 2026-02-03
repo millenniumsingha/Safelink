@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.3.1] - 2026-02-03
+### Fixed
+- **Desktop**: Fixed "Access is denied" DB error by moving storage to `%APPDATA%\SafeLink` (Issue #133).
+- **Desktop**: Fixed JVM launch failure on Windows ARM64 by bundling full JDK runtime (Issue #133).
+- **Desktop**: Implemented fallback SOS notification and email client integration (Issue #133).
+- **Desktop**: Added robust error logging and console mode for debugging.
+
 ## [v2.3.0] - 2026-02-03
 ### Changed
 - **Dependencies**: Upgraded Compose Multiplatform from 1.7.0 → 1.8.2.
