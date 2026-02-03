@@ -20,3 +20,6 @@ captures/
 # Keystore (never commit!)
 *.jks
 *.keystore
+# SQLite database files
+safelink.db
+*.db

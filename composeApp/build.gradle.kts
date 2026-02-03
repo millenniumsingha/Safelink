@@ -121,15 +121,24 @@ compose.desktop {
         mainClass = "com.safelink.app.MainKt"
 
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
             packageName = "SafeLink"
             packageVersion = "2.3.0"
             
-            // Include java.sql module for SQLDelight JDBC driver
-            modules("java.sql")
+            // Use ARM64 JDK for native Windows ARM64 support
+            javaHome = "C:/Program Files/Microsoft/jdk-21.0.9.10-hotspot"
+            
+            // Bundle complete JDK runtime for SQLDelight JDBC compatibility
+            includeAllModules = true
+            
+            // Enable console for debugging JVM launch issues
+            windows {
+                console = true
+            }
         }
         buildTypes.release.proguard {
             version.set("7.5.0")
+            isEnabled.set(false) // Disabled: Proguard strips Koin DI reflection
         }
     }
 }
