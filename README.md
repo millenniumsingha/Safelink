@@ -78,5 +78,6 @@ To ensure the SOS functionality works as intended, the application requires the 
 | **v2.1.3** | Tests + Coverage + CI Integration | ✅ Complete |
 | **v2.2.0** | Fix Desktop Launch + ARM64 Docs | ✅ Complete |
 | **v2.3.0** | Native Windows ARM64 (Compose 1.8.2) | ✅ Complete |
+| **v2.3.2** | Desktop Hotfix (DB, SOS, ARM64) | ✅ Complete |
 | **v2.4** | iOS Native App — SwiftUI integration | 🚧 Pending (requires macOS) |
 | **v3.0** | Cloud Sync & Auth — Cross-device backup | 📋 Planned |
