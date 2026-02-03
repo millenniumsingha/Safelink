@@ -123,7 +123,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb, TargetFormat.Exe)
             packageName = "SafeLink"
-            packageVersion = "2.3.0"
+            packageVersion = "2.3.1"
             
             // Use ARM64 JDK for native Windows ARM64 support
             javaHome = "C:/Program Files/Microsoft/jdk-21.0.9.10-hotspot"
