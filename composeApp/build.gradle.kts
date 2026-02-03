@@ -124,6 +124,9 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "SafeLink"
             packageVersion = "2.3.0"
+            
+            // Include java.sql module for SQLDelight JDBC driver
+            modules("java.sql")
         }
         buildTypes.release.proguard {
             version.set("7.5.0")
